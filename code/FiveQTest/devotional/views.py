@@ -26,3 +26,19 @@ def view_devotionals(request):
                                'results_found': results_found,
                                'was_post': was_post},
                               context_instance=RequestContext(request))
+
+
+@login_required
+def render_words_count(request):
+    """
+    Count the total number of words in the devotionals and render it.
+    """
+    count = 0
+    try:
+        count = sum([len(d.body.split(None)) for d in Devotional.objects.all()])
+    except:
+        pass
+
+    return render_to_response('devotional/view_word_count.html',
+                              {'count': count},
+                              context_instance=RequestContext(request))
