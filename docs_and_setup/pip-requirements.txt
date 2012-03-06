@@ -3,6 +3,9 @@
 # Django
 django==1.3.1
 
+# django-registration's good version:
+https://bitbucket.org/ubernostrum/django-registration/downloads/django-registration-0.8-alpha-1.tar.gz
+
 # Useful dev stuff
 django-extensions==0.8
 werkzeug==0.8.3
