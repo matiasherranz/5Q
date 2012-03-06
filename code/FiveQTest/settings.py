@@ -127,6 +127,7 @@ INSTALLED_APPS = (
 
     # 3rd party apps:
     'django_extensions',  # django commandline extensions
+    'registration',
 
     # Project own apps:
     'common',
@@ -154,3 +155,5 @@ LOGGING = {
         },
     }
 }
+
+LOGIN_REDIRECT_URL = '/common/dashboard/'
