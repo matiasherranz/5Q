@@ -16,6 +16,8 @@ def render_dashboard(request):
              'List and search devotionals by date': reverse('view_devotionals'),
              'See the total number of words in the devotionals':
                          reverse('view_words_count'),
+             'See devotionals list(admin users only)':
+                         reverse('admin:devotional_devotional_changelist')
             }
 
     return render_to_response('common/dashboard.html',
