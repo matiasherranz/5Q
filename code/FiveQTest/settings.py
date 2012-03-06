@@ -160,3 +160,6 @@ LOGGING = {
 }
 
 LOGIN_REDIRECT_URL = '/common/dashboard/'
+
+CSV_FILENAME = 'testdata.tab'
+CSV_FILE_PATH = os.path.join(CURRENT_PATH, CSV_FILENAME)
