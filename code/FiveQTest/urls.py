@@ -1,17 +1,32 @@
+# -*- coding: utf-8 *-*
+from django.conf import settings
 from django.conf.urls.defaults import patterns, include, url
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+# Enabling the Django admin interface:
+from django.contrib import admin
+admin.autodiscover()
+
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'FiveQTest.views.home', name='home'),
-    # url(r'^FiveQTest/', include('FiveQTest.foo.urls')),
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    # Project urls:
+    url(r'^common', include('common.urls')),
 
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+    url(r'^', 'django.views.generic.simple.redirect_to',
+        {'url': '/common/dashboard/'}),
+    url(r'^/', 'django.views.generic.simple.redirect_to',
+        {'url': '/common/dashboard/'}),
+
+
+    # Django admin:
+    url(r'^admin/', include(admin.site.urls)),
+
+    # User authentication:
+    url(r'^accounts/', include('registration.backends.default.urls')),
 )
+
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        (r'^site-media/(?P<path>.*)$', 'django.views.static.serve',
+         {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
+    )
