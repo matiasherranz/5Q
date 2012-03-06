@@ -89,3 +89,13 @@ Just go to:
 
 And run the command:
     $ python manage.py runserver
+
+
+6. Import the CSV with the custom management command
+###############################################################################
+
+Just go to:
+    $ cd <base directory>5Q/GIT/5Q/code/FiveQTest
+
+And run the command:
+    $ python manage.py import_csv
