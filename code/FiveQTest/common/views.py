@@ -14,6 +14,8 @@ def render_dashboard(request):
     links = {'Django admin': reverse('admin:index'),
              'Logout': reverse('auth_logout'),
              'List and search devotionals by date': reverse('view_devotionals'),
+             'See the total number of words in the devotionals':
+                         reverse('view_words_count'),
             }
 
     return render_to_response('common/dashboard.html',
