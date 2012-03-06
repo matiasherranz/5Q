@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Devotionals{% endblock %}
+
+
+{% block content %}
+
+    <form name="input" action="{% url view_devotionals %}" method="post">
+        {% csrf_token %}
+        <h2>Search devotionals by date:
+            <input type="text" name="devotional_date" id="textfield" />
+            <input type="submit" value="Search" />
+        </h2>
+        <strong> Input dates in this format: </strong> YYYY-MM-DD.
+    </form>
+
+    <br/><br/>
+
+    {% if results_found %}
+        <strong>Available devotionals: </strong>
+        {% for devotional in devotionals %}
+            <ul>
+                <li>Title: {{ devotional.title }}</li>
+            </ul>
+        {% endfor %}
+    {% else %}
+        {% if was_post %}
+            <strong>Your search did not throw any results.</strong>
+        {% else %}
+            <strong>No devotionals to show.</strong>
+        {% endif %}
+    {% endif %}
+
+
+
+{% endblock %}
