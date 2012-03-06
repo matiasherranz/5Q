@@ -12,7 +12,9 @@ def render_dashboard(request):
     Render project dashboard.
     """
     links = {'Django admin': reverse('admin:index'),
-             'Logout': reverse('auth_logout'), }
+             'Logout': reverse('auth_logout'),
+             'List and search devotionals by date': reverse('view_devotionals'),
+            }
 
     return render_to_response('common/dashboard.html',
                               {'links': links},
