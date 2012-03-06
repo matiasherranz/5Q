@@ -9,7 +9,7 @@ from models import Devotional
 @login_required
 def view_devotionals(request):
     """
-    Render a form that accepts a date and let's the user filter the matching
+    Render a form that accepts a date and lets the user filter the matching
     devotionals for the given date.
     """
     results_found, was_post = True, False
