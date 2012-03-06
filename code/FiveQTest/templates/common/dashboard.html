@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} Project Dashboard {% endblock %}
+
+
+{% block content %}
+    <h1> Project Dashboard </h1>
+    <strong> Useful project links: </strong>
+
+    {% for link_title, link_target in links.items %}
+        <ul>
+            <li>
+                <a href="{{ link_target }}"> {{ link_title }} </a>
+            </li>
+        </ul>
+    {% endfor %}
+
+{% endblock %}
