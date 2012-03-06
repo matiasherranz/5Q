@@ -25,7 +25,7 @@ Note: I use Python 2.7.2. You can also use 2.6.
 Now you have the virtualenv created. Let's activate it and install the project
 dependencies:
     $ source Env/bin/activate
-    $ pip install -r GIT/docs\ and\ setup/pip-requirements.txt
+    $ pip install -r GIT/docs_and_setup/pip-requirements.txt
 
 
 2. Checkout the GIT repo
